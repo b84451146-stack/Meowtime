@@ -1,3 +1,4 @@
+
 name: Build APK
 on: [push, workflow_dispatch]
 jobs:
@@ -5,21 +6,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - - name: Extract OFFGRID project
-  run: unzip -q OFFGRID_No_Subject_No_Prompts_Source.zip
+
+      - name: Extract OFFGRID project
+        run: unzip -q OFFGRID_No_Subject_No_Prompts_Source.zip
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
+
       - name: Accept Android licenses
         run: |
           yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: "8.7"
+
       - run: gradle assembleDebug
         working-directory: MeowTime
+
       - uses: actions/upload-artifact@v4
         with:
-          name: MeowTime-apk
+          name: OFFGRID-apk
           path: MeowTime/app/build/outputs/apk/debug/app-debug.apk
