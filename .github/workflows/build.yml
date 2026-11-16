@@ -7,9 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - 
       - name: Extract OFFGRID project
-        run: unzip -q OFFGRID_No_Subject_No_Prompts_Source.zip
-
+        run: unzip -q OFFGRID_YouTube_Educational_Access_Patch.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
