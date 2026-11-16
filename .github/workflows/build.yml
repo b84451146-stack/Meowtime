@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: OFFGRID_No_Subject_No_Prompts_Source.zip
+      - - name: Extract OFFGRID project
+  run: unzip -q OFFGRID_No_Subject_No_Prompts_Source.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
