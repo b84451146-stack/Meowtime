@@ -6,8 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - 
       - name: Extract OFFGRID project
         run: unzip -q OFFGRID_YouTube_Educational_Access_Patch.zip
       - uses: actions/setup-java@v4
