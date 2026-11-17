@@ -1,4 +1,3 @@
-
 name: Build APK
 on: [push, workflow_dispatch]
 jobs:
@@ -7,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Extract OFFGRID project
-        run: unzip -q OFFGRID_YouTube_Educational_Access_Patch.zip
+        run: unzip -q -o MeowTime_Android_StudyOnlyYouTube.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
